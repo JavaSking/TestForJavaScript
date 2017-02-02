@@ -26,6 +26,6 @@ Range.prototype = {
 
 // Here are example uses of a range object
 var r = new Range(1,3);   // Create a range object
-r.includes(2);            // => true: 2 is in the range
+console.log(r.includes(2));            // => true: 2 is in the range
 r.foreach(console.log);   // Prints 1 2 3
 console.log(r);           // Prints (1...3)
