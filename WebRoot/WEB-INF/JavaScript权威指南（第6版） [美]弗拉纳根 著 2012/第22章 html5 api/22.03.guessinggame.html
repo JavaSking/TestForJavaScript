@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html><head><title>I'm thinking of a number...</title>
+<html>
+<head>
+<title>I'm thinking of a number...</title>
 <script>
 window.onload = newgame;        // Start a new game when we load
 window.onpopstate = popState;   // Handle history events
@@ -136,18 +138,41 @@ function display(state) {
     }
 }
 </script>
-<style>  /* CSS styles to make the game look good */
-#prompt { font-size: 16pt; }
-table { width: 90%; margin:10px; margin-left:5%; }
-#low, #high { background-color: lightgray; height: 1em; }
-#mid { background-color: green; }
+<style> /* CSS styles to make the game look good */
+#prompt {
+	font-size: 16pt;
+}
+
+table {
+	width: 90%;
+	margin: 10px;
+	margin-left: 5%;
+}
+
+#low, #high {
+	background-color: lightgray;
+	height: 1em;
+}
+
+#mid {
+	background-color: green;
+}
 </style>
 </head>
-<body><!-- The HTML elements below are the game UI -->
-<!-- Game title and textual representation of the range of numbers -->
-<h1 id="heading">I'm thinking of a number...</h1>
-<!-- a visual representation of the numbers that haven't been ruled out -->
-<table><tr><td id="low"></td><td id="mid"></td><td id="high"></td></tr></table>
-<!-- Where the user enters their guess -->
-<label id="prompt"></label><input id="input" type="text">
-</body></html>
+<body>
+	<!-- The HTML elements below are the game UI -->
+	<!-- Game title and textual representation of the range of numbers -->
+	<h1 id="heading">I'm thinking of a number...</h1>
+	<!-- a visual representation of the numbers that haven't been ruled out -->
+	<table>
+		<tr>
+			<td id="low"></td>
+			<td id="mid"></td>
+			<td id="high"></td>
+		</tr>
+	</table>
+	<!-- Where the user enters their guess -->
+	<label id="prompt"></label>
+	<input id="input" type="text">
+</body>
+</html>

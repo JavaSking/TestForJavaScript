@@ -11,12 +11,16 @@
                           "dialogwidth:400; dialogheight:300; resizable:yes");
   -->
 <form>
-<fieldset id="fields"></fieldset> <!-- Dialog body filled in by script below -->
-<div style="text-align:center">   <!-- Buttons to dismiss the dialog -->
-<button onclick="okay()">Okay</button>     <!-- Set return value and close -->
-<button onclick="cancel()">Cancel</button> <!-- Close with no return value -->
-</div>
-<script>
+	<fieldset id="fields"></fieldset>
+	<!-- Dialog body filled in by script below -->
+	<div style="text-align: center">
+		<!-- Buttons to dismiss the dialog -->
+		<button onclick="okay()">Okay</button>
+		<!-- Set return value and close -->
+		<button onclick="cancel()">Cancel</button>
+		<!-- Close with no return value -->
+	</div>
+	<script>
 // Create the HTML for the dialog body and display it in the fieldset
 var args = dialogArguments;
 var text = "<legend>" + args[0] + "</legend>";

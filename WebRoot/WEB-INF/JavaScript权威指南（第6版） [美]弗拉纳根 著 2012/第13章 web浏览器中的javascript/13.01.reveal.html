@@ -3,8 +3,12 @@
 <head>
 <style>
 /* CSS styles for this page */
-.reveal * { display: none; }  /* Children of class="reveal" are  not shown */
-.reveal *.handle { display: block;} /* Except for the class="handle" child */
+.reveal * {
+	display: none;
+} /* Children of class="reveal" are  not shown */
+.reveal *.handle {
+	display: block;
+} /* Except for the class="handle" child */
 </style>
 <script>
 // Don't do anything until the entire document has loaded
@@ -25,9 +29,10 @@ window.onload = function() {
 </script>
 </head>
 <body>
-<div class="reveal">
-<h1 class="handle">Click Here to Reveal Hidden Text</h1>
-<p>This paragraph is hidden. It appears when you click on the title.</p>
-</div>
+	<div class="reveal">
+		<h1 class="handle">Click Here to Reveal Hidden Text</h1>
+		<p>This paragraph is hidden. It appears when you click on the
+			title.</p>
+	</div>
 </body>
 </html>

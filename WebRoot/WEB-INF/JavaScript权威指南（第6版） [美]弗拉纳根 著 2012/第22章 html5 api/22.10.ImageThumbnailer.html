@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html><head>
+<html>
+<head>
 <script>// At the time of this writing, Firefox and Webkit disagree on the
 // name of the createObjectURL() function
 var getBlobURL = (window.URL && URL.createObjectURL.bind(URL)) ||
@@ -57,11 +58,19 @@ window.onload = function() {
 };
 </script>
 <style> /* Simple styles for the file drop target */
-#droptarget { border: solid black 2px; width: 200px; height: 200px; }
-#droptarget.active { border: solid red 4px; }
+#droptarget {
+	border: solid black 2px;
+	width: 200px;
+	height: 200px;
+}
+
+#droptarget.active {
+	border: solid red 4px;
+}
 </style>
 </head>
-<body> <!-- The document starts off with just the file drop target -->
-<div id="droptarget">Drop Image Files Here</div>
+<body>
+	<!-- The document starts off with just the file drop target -->
+	<div id="droptarget">Drop Image Files Here</div>
 </body>
 </html>

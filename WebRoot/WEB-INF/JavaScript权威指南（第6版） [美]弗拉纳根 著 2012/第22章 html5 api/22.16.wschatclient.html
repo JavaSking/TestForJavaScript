@@ -5,9 +5,14 @@ window.onload = function() {
     var input = document.getElementById("input"); // Find the input field
     input.focus();                                // Set keyboard focus
 
-    // Register for notification of new messages using EventSource
-    var chat = new EventSource("/chat");
-    chat.onmessage = function(event) {            // When a new message arrives
+    // Open a WebSocket to send and receive chat messages on.
+    // Assume that the HTTP server we were downloaded from also functions as
+    // a websocket server, and use the same host name and port, but change
+    // from the http:// protocol to ws://
+    var socket = new WebSocket("ws://" + location.host + "/");
+
+    // This is how we receive messages from the server through the web socket
+    socket.onmessage = function(event) {          // When a new message arrives
         var msg = event.data;                     // Get text from event object
         var node = document.createTextNode(msg);  // Make it into a text node
         var div = document.createElement("div");  // Create a <div>
@@ -16,18 +21,14 @@ window.onload = function() {
         input.scrollIntoView();                   // Ensure input elt is visible
     }
 
-    // Post the user's messages to the server using XMLHttpRequest
+    // This is how we send messages to the server through the web socket
     input.onchange = function() {                 // When user strikes return
         var msg = nick + ": " + input.value;      // Username plus user's input
-        var xhr = new XMLHttpRequest();           // Create a new XHR
-        xhr.open("POST", "/chat");                // to POST to /chat.
-        xhr.setRequestHeader("Content-Type",      // Specify plain UTF-8 text 
-                             "text/plain;charset=UTF-8");
-        xhr.send(msg);                            // Send the message
+        socket.send(msg);                         // Send it through the socket
         input.value = "";                         // Get ready for more input
     }
 };
 </script>
-<!-- The chat UI is just a single text input field -->
-<!-- New chat messages will be inserted before this input field -->
-<input id="input" style="width:100%"/>
+<!-- The chat UI is just a single, wide text input field -->
+<!-- New chat messages will be inserted before this element -->
+<input id="input" style="width: 100%" />

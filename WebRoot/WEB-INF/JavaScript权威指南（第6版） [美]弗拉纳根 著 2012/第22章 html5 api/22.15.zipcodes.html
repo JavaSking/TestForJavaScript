@@ -252,17 +252,26 @@ function initdb(db, f) {
 </script>
 </head>
 <body>
-<p>Enter a zip code to find its city:</p>
-Zipcode: <input onchange="displayCity(this.value)"></input>
-City: <output id="city"></output>
-</div>
-<div>
-<p>Enter a city name (case sensitive, without state) to find cities and their zipcodes:</p>
-City: <input onchange="displayZipcodes(this.value)"></input>
-<div id="zipcodes"></div>
-</div>
-<p><i>This example is only known to work in Firefox 4 and Chrome 11.</i></p>
-<p><i>Your first query may take a very long time to complete.</i></p>
-<p><i>You may need to start Chrome with --unlimited-quota-for-indexeddb</i></p>
+	<p>Enter a zip code to find its city:</p>
+	Zipcode:
+	<input onchange="displayCity(this.value)"></input> City:
+	<output id="city"></output>
+	</div>
+	<div>
+		<p>Enter a city name (case sensitive, without state) to find
+			cities and their zipcodes:</p>
+		City: <input onchange="displayZipcodes(this.value)"></input>
+		<div id="zipcodes"></div>
+	</div>
+	<p>
+		<i>This example is only known to work in Firefox 4 and Chrome 11.</i>
+	</p>
+	<p>
+		<i>Your first query may take a very long time to complete.</i>
+	</p>
+	<p>
+		<i>You may need to start Chrome with
+			--unlimited-quota-for-indexeddb</i>
+	</p>
 </body>
 </html>
